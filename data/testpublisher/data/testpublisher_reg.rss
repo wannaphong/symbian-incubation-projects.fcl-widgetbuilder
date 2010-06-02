@@ -1,0 +1,37 @@
+/*
+* Copyright (c) {Year(s)} {Copyright owner}.
+* All rights reserved.
+* This component and the accompanying materials are made available
+* under the terms of the "Eclipse Public License v1.0"
+* which accompanies this distribution, and is available
+* at the URL "http://www.symbianfoundation.org/legal/sfl-v10.html".
+*
+* Initial Contributors:
+* {Name} {Company} ? Initial contribution
+*
+* Contributors:
+* {Name} {Company} ? {{Description of contribution}}
+*
+* Description:
+* {{Description of the file}}
+*
+*/
+
+#include "TestPublisher.hrh"
+#include "TestPublisher.rls"
+#include <appinfo.rh>
+#include <TestPublisher_0xE5555555.rsg>
+
+UID2 KUidAppRegistrationResourceFile
+UID3 _UID3
+
+RESOURCE APP_REGISTRATION_INFO
+	{
+	app_file="TestPublisher_0xE5555555";
+	localisable_resource_file =  qtn_loc_resource_file_1;
+	localisable_resource_id = R_LOCALISABLE_APP_INFO;
+
+	embeddability=KAppNotEmbeddable;
+	newfile=KAppDoesNotSupportNewFile;
+	}
+

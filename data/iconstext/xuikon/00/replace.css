@@ -1,0 +1,51 @@
+widget
+{
+    padding-top:3px;
+    padding-bottom:4px;
+    padding-left:5px;
+    padding-right:8px;
+}
+    
+
+box#container
+{
+    height:adaptive;
+    margin-top: auto;
+    margin-bottom: auto;   
+}
+
+box#row1
+{
+    direction: ltr;
+    block-progression:lr;
+    padding:0px;
+    margin:0px;
+    height:25px;
+}
+
+box.hidden
+{
+    display:none;
+    direction: ltr;
+    block-progression:lr;
+    padding:0px;
+    margin:0px;
+    height:25px;
+}
+
+image
+{
+    height: 24px;
+    width: 24px;
+    margin-top:1px;
+}
+
+text
+{
+    height:25px;
+    margin-left:10px;
+    font-size:3.5u;
+    _s60-text-valign: top;
+    font-family: EAknLogicalFontSecondaryFont;
+    color: "SKIN(268458534 13056 74)";
+}

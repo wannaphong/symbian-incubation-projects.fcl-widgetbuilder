@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmluiml xmlns="http://www.series60.com/xml/xmluiml/1" version="1.0">
+    <widget>
+
+        <!-- Content Publisher plug-in-->
+        <contentsource name="#replace#" value="0x20019594"/>
+        <configuration name="service" value="Service.ContentPublishing"/>
+        <configuration name="interface" value="IContentPublishing"/>
+        <configuration name="command" value="GetList"/>
+        <configuration name="publisher" value="#replaceuid#:#replace#"/>
+ 
+        <image id="img1" focusable="true" path="SKIN(270501603 6157)">
+            <actions>
+                <action>
+                    <trigger name="activate"/>
+                    <event name="#replace#/imageclicked"/>
+                </action>
+            </actions>
+            <configuration name="content_type" value="cnt1"/>
+            <property class="#replace#/image1"/>
+        </image>
+        <box id="ntbox" focusable="true">
+            <actions>
+                <action>
+                    <trigger name="activate"/>
+                    <event name="#replace#/textclicked"/>
+                </action>
+            </actions>
+            <text id="txt1"> My first widget!
+                <configuration name="content_type" value="cnt1"/>
+                <property class="#replace#/text1"/>
+            </text>
+            <newsticker id="nt1" >
+                <actions>
+                    <action>
+                        <trigger name="titlescrolled" titleindex="0"/>
+                        <event name="#replace#/OnTitleScrolled"/>
+                    </action>            
+                </actions>    
+                <title id="title1" titleindex="0">
+                    <property class="#replace#/title1"/>
+                    <configuration name="content_type" value="cnt2"/>
+                </title>                
+                <title id="title2" titleindex="1">
+                    <property class="#replace#/title2"/>
+                    <configuration name="content_type" value="cnt2"/>
+                </title>                
+                <title id="title3" titleindex="2">
+                    <property class="#replace#/title3"/>
+                    <configuration name="content_type" value="cnt2"/>
+                </title>                            
+            </newsticker>
+        </box>
+    </widget>
+</xmluiml>

@@ -1,0 +1,14 @@
+<RCC>
+    <qresource prefix="/widgets">
+        <file>images/feeds_layout.jpg</file>
+        <file>images/text_layout_3.jpg</file>
+        <file>images/iconstext_layout_1.jpg</file>
+        <file>images/iconstext_layout_2.jpg</file>
+        <file>images/iconstext_layout_3.jpg</file>
+        <file>images/text_layout_1.jpg</file>
+        <file>images/text_layout_2.jpg</file>
+        <file>images/graphictext_layout_1.jpg</file>
+        <file>images/graphictext_layout_2.jpg</file>
+        <file>images/graphictext_layout_3.jpg</file>
+    </qresource>
+</RCC>

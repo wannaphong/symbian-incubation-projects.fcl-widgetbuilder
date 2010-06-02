@@ -1,0 +1,56 @@
+widget
+{
+    direction: ltr;
+    block-progression:lr;
+}
+
+box#ntbox
+{
+    direction: ltr;
+    block-progression: tb;
+    margin-left: 5px;
+    margin-right: 3px;
+}
+image
+{
+    height: 70px;
+	width: 70px;
+	margin-left: 3px;
+	margin-top: 2px;
+	margin-bottom: 2px;
+	padding-top: 4px;
+	padding-bottom: 4px;
+	padding-left: 2px;
+	padding-right: 2px;
+		
+	nav-index: appearance;
+}
+
+text
+{
+    text-align: center;    
+    font-family: EAknLogicalFontSecondaryFont;
+    font-size: 3.5u;
+    color: "SKIN(268458534 13056 74)";
+    
+    nav-index: appearance;
+}
+
+newsticker
+{
+    font-family: EAknLogicalFontSecondaryFont;
+    font-size: 3.5u;
+    color: "SKIN(268458534 13056 74)";
+    text-align: left;
+    _s60-scroll-behaviour: scroll-alternate;
+    /** Alternate display time */    
+    _s60-display-time: 5000;
+    /** Scroll start delay */
+    _s60-start-delay: 2000;
+    /** Restart loop after title is updated */
+    _s60-restart-after-update: true;
+    /** Don't loop titles */
+    _s60-scroll-loop: false;
+    
+    nav-index: appearance;
+}

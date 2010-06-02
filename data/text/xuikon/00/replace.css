@@ -1,0 +1,27 @@
+widget
+{
+    padding-top:3px;
+    padding-bottom:4px;
+    padding-left:10px;
+    padding-right:8px;
+}
+
+box#container
+{
+    height:adaptive;
+    margin-top: auto;
+    margin-bottom: auto;   
+}
+
+text
+{
+    height:25px;
+    font-size:3.5u;
+    _s60-text-valign: top;
+    font-family: EAknLogicalFontSecondaryFont;
+    color: "SKIN(268458534 13056 74)";
+}
+
+text.hidden
+{
+    display:none;

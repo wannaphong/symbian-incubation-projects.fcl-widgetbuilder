@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmluiml xmlns="http://www.series60.com/xml/xmluiml/1" version="1.0">
+    <widget focusable="true" _s60-initial-focus="1">
+        <actions> 
+            <action>
+                <trigger name="activate"/>
+                <event name="#replace#/widgetclicked"/>
+            </action>
+        </actions>
+        <!-- Content Publisher plug-in-->
+        <contentsource name="#replace#" value="0x20019594"/>
+        <configuration name="service" value="Service.ContentPublishing"/>
+        <configuration name="interface" value="IContentPublishing"/>
+        <configuration name="command" value="GetList"/>
+        <configuration name="publisher" value="#replaceuid#:#replace#"/>
+ 
+        <box id="container">
+            <text id="txt1">
+                <configuration name="content_type" value="cnt1"/>
+                <property class="#replace#/text1"/> 
+            </text>
+            <text id="txt2" class="hidden">
+                <configuration name="content_type" value="cnt2"/>
+                <property class="#replace#/text2"/>
+                <property class="policy/emptyContent" name="txt2" value="display: none"/>
+                <property class="policy/Content" name="txt2" value="display: block"/>
+            </text>
+            <text id="txt3" class="hidden">
+                <configuration name="content_type" value="cnt3"/>
+                <property class="#replace#/text3"/> 
+                <property class="policy/emptyContent" name="txt3" value="display: none"/>
+                <property class="policy/Content" name="txt3" value="display: block"/>
+            </text>
+        </box>
+    </widget>
+</xmluiml>

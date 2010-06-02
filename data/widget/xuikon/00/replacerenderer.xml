@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmluiml xmlns="http://www.series60.com/xml/xmluiml/1" version="1.0">
+    <widget>
+
+        <!-- Content Publisher plug-in of widget -->
+        <contentsource name="#replace#" value="0x20019594"/>
+        <configuration name="service" value="Service.ContentPublishing"/>
+        <configuration name="interface" value="IContentPublishing"/>
+        <configuration name="command" value="GetList"/>
+        <configuration name="publisher" value="#replaceuid#:#replace#"/>
+        <#replace#renderer>
+            <data id="stream">
+                <property class="#replace#/widget"/>
+            </data>
+        </#replace#renderer>
+    </widget>
+</xmluiml>

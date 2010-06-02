@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmluiml xmlns="http://www.series60.com/xml/xmluiml/1" version="1.0">
+    <widget focusable="true" _s60-initial-focus="1">
+        <actions> 
+            <action>
+                <trigger name="activate"/>
+                <event name="#replace#/widgetclicked"/>
+            </action>
+        </actions>
+        <!-- Content Publisher plug-in-->
+        <contentsource name="#replace#" value="0x20019594"/>
+        <configuration name="service" value="Service.ContentPublishing"/>
+        <configuration name="interface" value="IContentPublishing"/>
+        <configuration name="command" value="GetList"/>
+        <configuration name="publisher" value="#replaceuid#:#replace#"/>
+ 
+        <box id="container">
+            <box id="row1">
+                <image id="img1" >
+                    <configuration name="content_type" value="cnt1"/>
+                    <property class="#replace#/image1"/>
+                </image>
+                <text id="txt1">
+                    <configuration name="content_type" value="cnt1"/>
+                    <property class="#replace#/text1"/> 
+                </text>
+            </box>
+            <box id="row2" class="hidden">
+                <image id="img2" >
+                    <configuration name="content_type" value="cnt2"/>
+                    <property class="#replace#/image2"/>
+                </image>
+                <text id="txt2">
+                    <configuration name="content_type" value="cnt2"/>
+                    <property class="#replace#/text2"/>
+                    <property class="policy/emptyContent" name="row2" value="display: none"/>
+                    <property class="policy/Content" name="row2" value="display: block"/>
+                </text>
+            </box>
+            <box id="row3" class="hidden">
+                <image id="img3" >
+                    <configuration name="content_type" value="cnt3"/>
+                    <property class="#replace#/image3"/>
+                </image>
+                <text id="txt3">
+                    <configuration name="content_type" value="cnt3"/>
+                    <property class="#replace#/text3"/> 
+                    <property class="policy/emptyContent" name="row3" value="display: none"/>
+                    <property class="policy/Content" name="row3" value="display: block"/>
+                </text>
+            </box>
+        </box>
+    </widget>
+</xmluiml>

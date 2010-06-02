@@ -1,0 +1,50 @@
+widget
+{
+    direction: ltr;
+    block-progression:lr;
+}
+
+box#container
+{
+    direction: ltr;
+    block-progression: tb;
+    padding-top:3px;
+    padding-bottom:4px;
+    padding-left:5px;
+    padding-right:8px;
+	nav-index: appearance;
+}
+image
+{
+    height: 70px;
+	width: 70px;
+	padding-top:6px;
+    padding-bottom:6px;
+    padding-left:6px;
+    padding-right:5px;
+	nav-index: appearance;
+}
+
+text
+{  
+    font-family: EAknLogicalFontSecondaryFont;
+    font-size: 3.5u;
+    color: "SKIN(268458534 13056 74)";
+}
+
+newsticker
+{
+    font-family: EAknLogicalFontSecondaryFont;
+    font-size: 3.5u;
+    color: "SKIN(268458534 13056 74)";
+    text-align: left;
+    _s60-scroll-behaviour: scroll-alternate;
+    /** Alternate display time */    
+    _s60-display-time: 5000;
+    /** Scroll start delay */
+    _s60-start-delay: 2000;
+    /** Restart loop after title is updated */
+    _s60-restart-after-update: true;
+    /** Don't loop titles */
+    _s60-scroll-loop: false;
+}

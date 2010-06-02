@@ -1,0 +1,80 @@
+/*
+* Copyright (c) {Year(s)} {Copyright owner}.
+* All rights reserved.
+* This component and the accompanying materials are made available
+* under the terms of the "Eclipse Public License v1.0"
+* which accompanies this distribution, and is available
+* at the URL "http://www.symbianfoundation.org/legal/sfl-v10.html".
+*
+* Initial Contributors:
+* {Name} {Company} ? Initial contribution
+*
+* Contributors:
+* {Name} {Company} ? {{Description of contribution}}
+*
+* Description:
+* {{Description of the file}}
+*
+*/
+
+#include <platform_paths.hrh>
+#include <data_caging_paths.hrh>
+APP_LAYER_SYSTEMINCLUDE
+
+TARGET          TestPublisher_0xE5555555.exe
+TARGETTYPE      exe
+UID             0x100039CE 0xE5555555
+
+SOURCEPATH      ..\src
+SOURCE          testpublisher.cpp
+SOURCE          testpublisherapplication.cpp
+SOURCE          testpublisherappview.cpp
+SOURCE          testpublisherappui.cpp
+SOURCE          testpublisherdocument.cpp
+
+SOURCEPATH      ..\..\publisherif\src
+SOURCE          hspublisher.cpp
+SOURCE          hspublisherimpl.cpp
+SOURCE          transaction.cpp
+
+SOURCEPATH      ..\data
+
+START RESOURCE  testpublisher.rss
+HEADER
+TARGET          TestPublisher_0xE5555555
+TARGETPATH      resource\apps
+END //RESOURCE
+
+START RESOURCE  testpublisher_reg.rss
+TARGET          testpublisher_0xE5555555_reg
+TARGETPATH      \private\10003a3f\apps
+END //RESOURCE
+
+
+
+USERINCLUDE    ..\inc
+USERINCLUDE    ..\..\publisherif\inc
+
+SYSTEMINCLUDE  \epoc32\include
+
+LIBRARY        euser.lib
+LIBRARY        apparc.lib
+LIBRARY        cone.lib
+LIBRARY        bafl.lib
+LIBRARY        eikcore.lib
+LIBRARY        avkon.lib
+LIBRARY        commonengine.lib
+LIBRARY        aknnotify.lib
+LIBRARY        liwServiceHandler.lib
+ 
+
+LANG SC
+
+VENDORID       0
+SECUREID       0xE5555555
+CAPABILITY     ReadUserData
+
+#ifdef ENABLE_ABIV2_MODE
+  DEBUGGABLE_UDEBONLY
+#endif
+// End of File
