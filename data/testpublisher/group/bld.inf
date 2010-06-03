@@ -21,6 +21,8 @@ PRJ_EXPORTS
 ../gfx/f1.png /epoc32/winscw/c/data/installs/f1.png
 ../gfx/cricket.png /epoc32/winscw/c/data/installs/cricket.png
 ../gfx/tennis.png /epoc32/winscw/c/data/installs/tennis.png
+../gfx/rss.png /epoc32/winscw/c/data/installs/rss.png
+../gfx/rss_small.png /epoc32/winscw/c/data/installs/rss_small.png
 
 PRJ_PLATFORMS
 WINSCW ARMV5 GCCE
