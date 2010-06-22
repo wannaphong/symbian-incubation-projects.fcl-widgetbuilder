@@ -6,7 +6,7 @@
 
 QT       += core gui
 
-TARGET = WidgetGen
+TARGET = WidgetBuilder
 TEMPLATE = app
 
 

@@ -50,6 +50,10 @@ void PublisherCreator::copyFiles()
                   iUi.widgetName() + "/testpublisher/gfx/cricket.png");
     QFile::copy ( "data/testpublisher/gfx/tennis.png",
                   iUi.widgetName() + "/testpublisher/gfx/tennis.png");
+    QFile::copy ( "data/testpublisher/gfx/rss.png",
+                  iUi.widgetName() + "/testpublisher/gfx/rss.png");
+    QFile::copy ( "data/testpublisher/gfx/rss_small.png",
+                  iUi.widgetName() + "/testpublisher/gfx/rss_small.png");
 
     dir.mkpath( iUi.widgetName() + "/testpublisher/group");
     QFile::copy ( "data/testpublisher/group/bld.inf",

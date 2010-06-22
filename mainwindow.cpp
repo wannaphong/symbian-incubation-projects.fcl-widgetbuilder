@@ -116,11 +116,11 @@ void MainWindow::on_pushButton_clicked()
         RendererCreator * renderer = new RendererCreator(*this);
         delete renderer;
     }
-/*
+
     QMessageBox msgBox;
     msgBox.setText("Widget created.");
     msgBox.exec();
-    return;*/
+    return;
 }
 
 void MainWindow::generateMainBuildFile()
