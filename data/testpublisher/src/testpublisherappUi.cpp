@@ -31,8 +31,6 @@
 #include "TestPublisherAppUi.h"
 #include "TestPublisherAppView.h"
 
-_LIT( KText, "Test publisher!");
-
 // ============================ MEMBER FUNCTIONS ===============================
 
 

@@ -80,8 +80,8 @@ void PublisherCreator::copyFiles()
     dir.mkpath( iUi.widgetName() + "/testpublisher/sis");
     QFile::copy ( "data/testpublisher/sis/backup_registration.xml",
                   iUi.widgetName() + "/testpublisher/sis/backup_registration.xml");
-    QFile::copy ( "data/testpublisher/sis/TestPublisher_S60_3_X_v_1_0_0.pkg",
-                  iUi.widgetName() + "/testpublisher/sis/TestPublisher_S60_3_X_v_1_0_0.pkg");
+    QFile::copy ( "data/testpublisher/sis/TestPublisher.pkg",
+                  iUi.widgetName() + "/testpublisher/sis/TestPublisher.pkg");
 
     dir.mkpath( iUi.widgetName() + "/testpublisher/src");
     QFile::copy ( "data/testpublisher/src/testpublisher.cpp",
@@ -97,5 +97,8 @@ void PublisherCreator::copyFiles()
 
     iUi.replaceData("data/testpublisher/src/testpublisherappview.cpp",
                 iUi.widgetName() + "/testpublisher/src/testpublisherappview.cpp" );
+
+    iUi.replaceData("data/testpublisher/data/testpublisher_0xe5555555_fs.xml",
+                iUi.widgetName() + "/testpublisher/data/testpublisher_0xe5555555_fs.xml");
 
 }

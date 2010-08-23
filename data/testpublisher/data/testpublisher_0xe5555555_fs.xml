@@ -1,0 +1,34 @@
+<!--TODO : FILENAME FORMAT [template_type]_[widget_uid]_fs.xml  -->
+
+<?xml version="1.0" encoding="UTF-8"?>
+<cps:content xmlns:cps="http://" version="1.0">
+    <!-- PUBLISHER REGISTRY -->
+    <cps:publisher>
+        <cps:data_item key="publisher" type="string" value="#replaceuid#:#replace#"/> <!-- Value must be same as publisher uses-->
+        <cps:data_item key="content_type" type="string" value="all"/> <!-- should NOT be changed -->  
+        <cps:data_item key="content_id" type="string8" value="all"/> <!-- should NOT be changed    -->
+        <cps:data_item key="action_map" type="map">                        
+            <cps:data_item key="active" type="map">
+                <cps:data_item key="plugin_id" type="integer" value="0x10282E5F"/><!-- should NOT be changed -->
+                <cps:data_item key="data" type="map">
+                    <cps:data_item key="application_uid" type="integer" value="0xe5555555"/> <!-- Publisher application uid -->
+                    <cps:data_item key="apa_command" type="string" value="apa_command_background"/>
+                    <cps:data_item key="launch_method" type="string" value="cmd_line"/>
+                    <cps:data_item key="type" type="string" value="launch_application"/>
+                </cps:data_item>           
+            </cps:data_item>
+        </cps:data_item>
+
+        <cps:data_item key="ACL" type="map">                       
+            <cps:data_item key="write" type="map">
+                <cps:data_item key="UID" type="string" value="0xe5555555"/> <!--Publisher application uid -->
+            </cps:data_item>   
+            <cps:data_item key="delete" type="map">
+                <cps:data_item key="UID" type="string" value="0xe5555555:0x10282E5A"/>
+                <!--Publisher app and ContentHarvester UIDs - (content harvester UID must be provided
+                in order to allow SWI content harvester plug-in to remove widget information from CPS)
+                if a widget was removed or it was installed on MMC and MMC was removed -->
+                </cps:data_item>   
+        </cps:data_item>       
+    </cps:publisher>
+</cps:content>

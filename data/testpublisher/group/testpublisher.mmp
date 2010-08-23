@@ -66,6 +66,7 @@ LIBRARY        avkon.lib
 LIBRARY        commonengine.lib
 LIBRARY        aknnotify.lib
 LIBRARY        liwServiceHandler.lib
+LIBRARY        fbscli.lib
  
 
 LANG SC

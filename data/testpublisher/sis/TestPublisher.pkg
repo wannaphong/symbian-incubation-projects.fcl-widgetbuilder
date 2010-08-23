@@ -24,14 +24,23 @@
 ;Files to install
 ;You should change the source paths to match that of your environment
 ;<source> <destination>
-"$(EPOCROOT)Epoc32\release\$(PLATFORM)\$(TARGET)\TestPublisher_0xE5555555.exe"		-"!:\sys\bin\TestPublisher_0xE5555555.exe"
-"$(EPOCROOT)Epoc32\data\z\resource\apps\TestPublisher_0xE5555555.rsc"		-"!:\resource\apps\TestPublisher_0xE5555555.rsc"
-"$(EPOCROOT)Epoc32\data\z\private\10003a3f\apps\TestPublisher_0xE5555555_reg.rsc"	-"!:\private\10003a3f\import\apps\TestPublisher_0xE5555555_reg.rsc"
-"$(EPOCROOT)Epoc32\data\z\resource\apps\TestPublisher_0xE5555555.mif" -"!:\resource\apps\TestPublisher_0xE5555555.mif"
-"..\help\TestPublisher_0xE5555555.hlp"							 -"!:\resource\help\TestPublisher_0xE5555555.hlp"
+"\epoc32\release\armv5\urel\TestPublisher_0xE5555555.exe"		-"!:\sys\bin\TestPublisher_0xE5555555.exe"
+"\epoc32\data\z\resource\apps\TestPublisher_0xE5555555.rsc"		-"!:\resource\apps\TestPublisher_0xE5555555.rsc"
+"\epoc32\data\z\private\10003a3f\apps\TestPublisher_0xE5555555_reg.rsc"	-"!:\private\10003a3f\import\apps\TestPublisher_0xE5555555_reg.rsc"
+"\epoc32\data\z\resource\apps\TestPublisher_0xE5555555.mif" -"!:\resource\apps\TestPublisher_0xE5555555.mif"
 
 ; Add any installation notes if applicable
 ;"TestPublisher.txt"		-"!:\private\E5555555\TestPublisher.txt"
 
 ;required for application to be covered by backup/restore facility 
 "..\sis\backup_registration.xml"		-"!:\private\E5555555\backup_registration.xml"
+
+; required to startup the publisher automatically
+"..\data\testpublisher_0xe5555555_fs.xml" - "!:\private\10282E5A\import\fs\testpublisher_0xe5555555_fs.xml"
+
+; graphics
+"..\gfx\cricket.png" - "c:\data\installs\cricket.png"
+"..\gfx\f1.png" - "c:\data\installs\f1.png"
+"..\gfx\rss.png" - "c:\data\installs\rss.png"
+"..\gfx\rss_small.png" - "c:\data\installs\rss_small.png"
+"..\gfx\tennis.png" - "c:\data\installs\tennis.png"
