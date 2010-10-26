@@ -19,16 +19,14 @@ WidgetCreator::WidgetCreator(MainWindow& aUi, QObject *parent ) :
     generateBur();
 }
 
-
-
 QString WidgetCreator::widgetName()
 {
-    return iUi.widgetName();
+    return iUi.widgetName().toLower();
 }
 
 QString WidgetCreator::widgetUid()
 {
-    return iUi.widgetUid();
+    return iUi.widgetUid().toLower();
 }
 
 QString WidgetCreator::widgetLayout()
@@ -49,18 +47,18 @@ void WidgetCreator::generateFolders()
 
 void WidgetCreator::generateBuildFile()
 {
-    iUi.replaceData("data/" + widgetLayout() +"/group/bld.inf", widgetName() + "/widget/group/bld.inf", 1);
+    iUi.replaceData("data/commonwidgetdata/group/bld.inf", widgetName() + "/widget/group/bld.inf", 1);
 }
 
 void WidgetCreator::generateHSPSManifest()
 {
-    iUi.replaceData("data/" + widgetLayout() +"/hsps/00/manifest.dat",
+    iUi.replaceData("data/commonwidgetdata/hsps/00/manifest.dat",
                 widgetName() + "/widget/hsps/00/manifest.dat");
 }
 
 void WidgetCreator::generateHSPSConf()
 {
-    iUi.replaceData( "data/" + widgetLayout() +"/hsps/00/widgetconfiguration.xml",
+    iUi.replaceData( "data/commonwidgetdata/hsps/00/widgetconfiguration.xml",
                  widgetName() + "/widget/hsps/00/widgetconfiguration.xml" );
 }
 
@@ -77,13 +75,13 @@ void WidgetCreator::generateXml()
 {
     if( iUi.rendererCheckBox().isChecked())
     {
-        iUi.replaceData( "data/" + widgetLayout() +"/xuikon/00/replacerenderer.xml",
-             widgetName() + "/widget/xuikon/00/" + iUi.widgetName() +  ".xml");
+        iUi.replaceData( "data/commonwidgetdata/xuikon/00/replacerenderer.xml",
+             widgetName() + "/widget/xuikon/00/" + widgetName() +  ".xml");
     }
     else
     {
         iUi.replaceData( "data/" + widgetLayout() +"/xuikon/00/replace.xml",
-             widgetName() + "/widget/xuikon/00/" + iUi.widgetName() +  ".xml");
+             widgetName() + "/widget/xuikon/00/" + widgetName() +  ".xml");
     }
 
 }  
@@ -92,19 +90,19 @@ void WidgetCreator::generateCss()
 {
     if( iUi.rendererCheckBox().isChecked())
     {
-        iUi.replaceData( "data/" + widgetLayout() +"/xuikon/00/replacerenderer.css",
-             widgetName() + "/widget/xuikon/00/" + iUi.widgetName() +  ".css");
+        iUi.replaceData( "data/commonwidgetdata/xuikon/00/replacerenderer.css",
+             widgetName() + "/widget/xuikon/00/" + widgetName() +  ".css");
     }
     else
     {
         iUi.replaceData( "data/" + widgetLayout() +"/xuikon/00/replace.css",
-             widgetName() + "/widget/xuikon/00/" + iUi.widgetName() +  ".css");
+             widgetName() + "/widget/xuikon/00/" + widgetName() +  ".css");
     }
 }
 
 void WidgetCreator::generateDat()
 {
-    iUi.replaceData("data/" + widgetLayout() +"/xuikon/00/replace.dat",
+    iUi.replaceData("data/commonwidgetdata/xuikon/00/replace.dat",
                 widgetName() + "/widget/xuikon/00/" + widgetName() + "_" + iUi.widgetUidNoHex() + ".dat");
 }
 
@@ -120,7 +118,7 @@ void WidgetCreator::generateDtd()
 
 void WidgetCreator::generatePkg()
 {
-    iUi.replaceData("data/" + widgetLayout() +"/sis/replace.pkg",
+    iUi.replaceData("data/commonwidgetdata/sis/replace.pkg",
                 widgetName() + "/widget/sis/"+ widgetName() + ".pkg", 1); // 1 =no hex uid used
    }
 

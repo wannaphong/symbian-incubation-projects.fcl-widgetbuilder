@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>332</width>
+    <width>356</width>
     <height>324</height>
    </rect>
   </property>
@@ -115,6 +115,31 @@
               <string>Graphic&amp;Text layout</string>
              </property>
             </item>
+            <item>
+             <property name="text">
+              <string>Graphics&amp;Icon&amp;Text layout</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Graphics grid layout</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Graphics grid&amp;Text layout</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Widge image layout</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Carousel graphics layout</string>
+             </property>
+            </item>
            </widget>
           </item>
          </layout>
@@ -125,15 +150,21 @@
        <widget class="QLabel" name="layoutGraphics">
         <property name="maximumSize">
          <size>
-          <width>312</width>
+          <width>334</width>
           <height>82</height>
          </size>
+        </property>
+        <property name="autoFillBackground">
+         <bool>true</bool>
         </property>
         <property name="text">
          <string/>
         </property>
         <property name="pixmap">
          <pixmap resource="widgetgen.qrc">:/widgets/images/feeds_layout.jpg</pixmap>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
         </property>
        </widget>
       </item>
@@ -201,6 +232,11 @@
           <property name="enabled">
            <bool>false</bool>
           </property>
+          <property name="font">
+           <font>
+            <pointsize>12</pointsize>
+           </font>
+          </property>
          </widget>
         </item>
        </layout>
@@ -226,6 +262,11 @@
          <widget class="QLineEdit" name="rendererUid">
           <property name="enabled">
            <bool>false</bool>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>12</pointsize>
+           </font>
           </property>
          </widget>
         </item>

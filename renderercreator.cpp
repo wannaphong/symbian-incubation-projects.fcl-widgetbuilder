@@ -16,8 +16,8 @@ RendererCreator::RendererCreator(MainWindow& aUi) : iUi( aUi )
 void RendererCreator::generateFolders()
 {
     QDir dir;
-    dir.mkpath( iUi.widgetName() + "/renderingplugin");
-    dir.setPath( iUi.widgetName() + "/renderingplugin");
+    dir.mkpath( iUi.widgetName().toLower() + "/renderingplugin");
+    dir.setPath( iUi.widgetName().toLower() + "/renderingplugin");
     dir.mkpath( "data" );
     dir.mkpath( "group" );
     dir.mkpath( "inc" );
@@ -26,32 +26,46 @@ void RendererCreator::generateFolders()
 
 void RendererCreator::generateResource()
 {
+    QString widgetName( iUi.widgetName().toLower() );
+    QString rendererName( iUi.rendererName().toLower() );
+
     iUi.replaceData("data/renderingplugin/data/renderer.rss",
-                iUi.widgetName() + "/renderingplugin/data/" + iUi.rendererName() +  "renderer.rss");
+                widgetName + "/renderingplugin/data/" + rendererName +  "renderer.rss");
 }
 
 void RendererCreator::generateBuildFile()
 {
+    QString widgetName( iUi.widgetName().toLower() );
+
     iUi.replaceData("data/renderingplugin/group/bld.inf",
-                 iUi.widgetName() + "/renderingplugin/group/bld.inf");
+                 widgetName + "/renderingplugin/group/bld.inf");
 }
 
 void RendererCreator::generateMMP()
 {
+    QString widgetName( iUi.widgetName().toLower() );
+    QString rendererName( iUi.rendererName().toLower() );
+
     iUi.replaceData("data/renderingplugin/group/renderer.mmp",
-                iUi.widgetName() + "/renderingplugin/group/" + iUi.rendererName() +  "renderer.mmp");
+                widgetName + "/renderingplugin/group/" + rendererName +  "renderer.mmp");
 }
 
 void RendererCreator::generateHeader()
 {
+    QString widgetName( iUi.widgetName().toLower() );
+    QString rendererName( iUi.rendererName().toLower() );
+
     iUi.replaceData("data/renderingplugin/inc/renderer.h",
-                 iUi.widgetName() + "/renderingplugin/inc/" + iUi.rendererName() +  "renderer.h");
+                 widgetName + "/renderingplugin/inc/" + rendererName +  "renderer.h");
 }
 
 void RendererCreator::generateSource()
 {
+    QString widgetName( iUi.widgetName().toLower() );
+    QString rendererName( iUi.rendererName().toLower() );
+
     iUi.replaceData("data/renderingplugin/src/renderer.cpp",
-                iUi.widgetName() + "/renderingplugin/src/" + iUi.rendererName() +  "renderer.cpp");
+                widgetName + "/renderingplugin/src/" + rendererName +  "renderer.cpp");
 }
 
 void RendererCreator::replaceData( QString sourceFile, QString destFile )
@@ -71,8 +85,15 @@ void RendererCreator::replaceData( QString sourceFile, QString destFile )
     while (!in.atEnd())
     {
         QString line = in.readLine();
-        line.replace(QString("#replace#"), iUi.rendererName());
-        line.replace(QString("#replaceuid#"), iUi.rendererUid());
+        if( line.contains("#replace#Renderer.h", Qt::CaseInsensitive ))
+        {
+            line.replace(QString("#replace#"), iUi.rendererName().toLower());
+        }
+        else
+        {
+            line.replace(QString("#replace#"), iUi.rendererName());
+            line.replace(QString("#replaceuid#"), iUi.rendererUid());
+        }
         out << line << "\n";
     }
 }

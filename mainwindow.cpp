@@ -38,7 +38,7 @@ void MainWindow::changeEvent(QEvent *e)
 
 QString MainWindow::widgetName()
 {
-    return ui->widgetName->text().toLower();
+    return ui->widgetName->text();
 }
 
 QString MainWindow::widgetUid()
@@ -58,7 +58,7 @@ QString MainWindow::rendererName()
 
 QString MainWindow::rendererUid()
 {
-    return ui->rendererUid->text();
+    return ui->rendererUid->text().toLower();
 }
 
 void MainWindow::on_pushButton_clicked()
@@ -85,6 +85,14 @@ void MainWindow::on_pushButton_clicked()
     {
         QMessageBox msgBox;
         msgBox.setText("UID must be less than\n 0x80000000.");
+        msgBox.exec();
+        return;
+    }
+
+    if (widgetLayout().length() == 0 && !rendererCheckBox().isChecked())
+    {
+        QMessageBox msgBox;
+        msgBox.setText("Layout data not available yet.");
         msgBox.exec();
         return;
     }
@@ -126,8 +134,8 @@ void MainWindow::on_pushButton_clicked()
 void MainWindow::generateMainBuildFile()
 {
     QDir dir;
-    dir.mkpath( widgetName() + "/group");
-    dir.setPath( widgetName() + "/group");
+    dir.mkpath( widgetName().toLower() + "/group");
+    dir.setPath( widgetName().toLower() + "/group");
     QFile file( dir.filePath("bld.inf"));
     if (!file.open(QIODevice::WriteOnly | QIODevice::Text))
         return;
@@ -200,6 +208,7 @@ void MainWindow::replaceData( QString sourceFile, QString destFile, bool noHexUi
     {
         QString line = in.readLine();
         line.replace(QString("#replace#"), widgetName());
+
         if( noHexUid )
         {
             line.replace(QString("#replaceuid#"), widgetUidNoHex());
@@ -214,15 +223,19 @@ void MainWindow::replaceData( QString sourceFile, QString destFile, bool noHexUi
 
 void MainWindow::on_renderingCheckBox_stateChanged(int state )
 {
+    iTimer->stop();
     if( state == Qt::Unchecked )
     {
         ui->rendererName->setEnabled( false );
         ui->rendererUid->setEnabled( false );
+        ui->comboBox->setEnabled( true );
+        updateLayout();
     }
     else if ( state == Qt::Checked)
     {
         ui->rendererName->setEnabled( true );
         ui->rendererUid->setEnabled( true);
+        ui->comboBox->setEnabled( false );
     }
 
 }
@@ -251,7 +264,15 @@ QString MainWindow::widgetLayout()
             return QString( "graphictext" );
         }
         break;
+    case 4:
+        {
+            return QString( "graphiciconstext" );
+        }
+        break;
+
     };
+
+    return QString( "" );
 }
 
 void MainWindow::on_comboBox_currentIndexChanged(int index)
@@ -259,8 +280,6 @@ void MainWindow::on_comboBox_currentIndexChanged(int index)
     iLayoutIndex = index;
     iLayoutCount = 3;
     updateLayout();
-
-
 }
 
 void MainWindow::updateLayout()
@@ -287,8 +306,38 @@ void MainWindow::updateLayout()
         break;
     case 3:
         {
-            showGraphicTextLayout();
+            showGraphicsTextLayout();
             iTimer->start(2000);
+        }
+        break;
+    case 4:
+        {
+            showGraphicsIconTextLayout();
+            iTimer->start(2000);
+        }
+        break;
+    case 5:
+        {
+            iTimer->stop();
+            showGraphicsGridLayout();
+        }
+        break;
+    case 6:
+        {
+            iTimer->stop();
+            showGraphicsGridTextLayout();
+        }
+        break;
+    case 7:
+        {
+            iTimer->stop();
+            showWidgeImageLayout();
+        }
+        break;
+    case 8:
+        {
+            iTimer->stop();
+            showGraphicsCarouselLayout();
         }
         break;
     };
@@ -306,6 +355,26 @@ void MainWindow::updateLayout()
 void MainWindow::showFeedsLayout()
 {
     ui->layoutGraphics->setPixmap(QPixmap(QString::fromUtf8(":/widgets/images/feeds_layout.jpg")));
+}
+
+void MainWindow::showGraphicsGridLayout()
+{
+    ui->layoutGraphics->setPixmap(QPixmap(QString::fromUtf8(":/widgets/images/graphicsgrid_layout.jpg")));
+}
+
+void MainWindow::showGraphicsGridTextLayout()
+{
+    ui->layoutGraphics->setPixmap(QPixmap(QString::fromUtf8(":/widgets/images/graphicsgridtext_layout.jpg")));
+}
+
+void MainWindow::showWidgeImageLayout()
+{
+    ui->layoutGraphics->setPixmap(QPixmap(QString::fromUtf8(":/widgets/images/wideimage_layout.jpg")));
+}
+
+void MainWindow::showGraphicsCarouselLayout()
+{
+    ui->layoutGraphics->setPixmap(QPixmap(QString::fromUtf8(":/widgets/images/graphicscarousel_layout.jpg")));
 }
 
 void MainWindow::showTextLayout()
@@ -328,12 +397,23 @@ void MainWindow::showIconsTextLayout()
     ui->layoutGraphics->setPixmap(QPixmap(imagePath));
 }
 
-void MainWindow::showGraphicTextLayout()
+void MainWindow::showGraphicsTextLayout()
 {
-    QString imagePath(":/widgets/images/graphictext_layout_");
+    QString imagePath(":/widgets/images/graphicstext_layout_");
     QString cnt;
     cnt.setNum( iLayoutCount );
     imagePath.append( cnt );
     imagePath.append( ".jpg" );
     ui->layoutGraphics->setPixmap(QPixmap(imagePath));
 }
+
+void MainWindow::showGraphicsIconTextLayout()
+{
+    QString imagePath(":/widgets/images/graphicsiconstext_layout_");
+    QString cnt;
+    cnt.setNum( iLayoutCount );
+    imagePath.append( cnt );
+    imagePath.append( ".jpg" );
+    ui->layoutGraphics->setPixmap(QPixmap(imagePath));
+}
+

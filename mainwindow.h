@@ -36,9 +36,14 @@ protected:
 private:
     void generateMainBuildFile();
     void showFeedsLayout();
+    void showGraphicsGridLayout();
+    void showGraphicsGridTextLayout();
+    void showWidgeImageLayout();
+    void showGraphicsCarouselLayout();
     void showTextLayout();
     void showIconsTextLayout();
-    void showGraphicTextLayout();
+    void showGraphicsTextLayout();
+    void showGraphicsIconTextLayout();
 
 private:
     Ui::MainWindow *ui;
