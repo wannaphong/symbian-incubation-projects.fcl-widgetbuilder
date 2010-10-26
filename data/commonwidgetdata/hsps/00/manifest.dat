@@ -10,7 +10,11 @@
     <fullname>#replace#</fullname>
     <shortname>#replace#</shortname>
     <version>1.0</version>
+    <!-- widget description -->
+    <description>#replace# description</description>
     
+    <!-- widget icon -->
+    <filelogo>skin(0x101f84b7 0x2100):mif(z:\resource\apps\avkon2.mif 16698 16699)</filelogo>
     <multiinstance>unlimited</multiinstance>
     
     <filexml>widgetconfiguration.xml</filexml>
