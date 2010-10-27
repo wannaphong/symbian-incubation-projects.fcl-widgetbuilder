@@ -29,7 +29,7 @@ void RendererCreator::generateResource()
     QString widgetName( iUi.widgetName().toLower() );
     QString rendererName( iUi.rendererName().toLower() );
 
-    iUi.replaceData("data/renderingplugin/data/renderer.rss",
+    replaceData("data/renderingplugin/data/renderer.rss",
                 widgetName + "/renderingplugin/data/" + rendererName +  "renderer.rss");
 }
 
@@ -37,7 +37,7 @@ void RendererCreator::generateBuildFile()
 {
     QString widgetName( iUi.widgetName().toLower() );
 
-    iUi.replaceData("data/renderingplugin/group/bld.inf",
+    replaceData("data/renderingplugin/group/bld.inf",
                  widgetName + "/renderingplugin/group/bld.inf");
 }
 
@@ -46,7 +46,7 @@ void RendererCreator::generateMMP()
     QString widgetName( iUi.widgetName().toLower() );
     QString rendererName( iUi.rendererName().toLower() );
 
-    iUi.replaceData("data/renderingplugin/group/renderer.mmp",
+    replaceData("data/renderingplugin/group/renderer.mmp",
                 widgetName + "/renderingplugin/group/" + rendererName +  "renderer.mmp");
 }
 
@@ -55,7 +55,7 @@ void RendererCreator::generateHeader()
     QString widgetName( iUi.widgetName().toLower() );
     QString rendererName( iUi.rendererName().toLower() );
 
-    iUi.replaceData("data/renderingplugin/inc/renderer.h",
+    replaceData("data/renderingplugin/inc/renderer.h",
                  widgetName + "/renderingplugin/inc/" + rendererName +  "renderer.h");
 }
 
@@ -64,7 +64,7 @@ void RendererCreator::generateSource()
     QString widgetName( iUi.widgetName().toLower() );
     QString rendererName( iUi.rendererName().toLower() );
 
-    iUi.replaceData("data/renderingplugin/src/renderer.cpp",
+    replaceData("data/renderingplugin/src/renderer.cpp",
                 widgetName + "/renderingplugin/src/" + rendererName +  "renderer.cpp");
 }
 
@@ -85,10 +85,15 @@ void RendererCreator::replaceData( QString sourceFile, QString destFile )
     while (!in.atEnd())
     {
         QString line = in.readLine();
-        if( line.contains("#replace#Renderer.h", Qt::CaseInsensitive ))
+        if( line.contains("#replace#renderer.h", Qt::CaseInsensitive ))
         {
-            line.replace(QString("#replace#"), iUi.rendererName().toLower());
+            line.replace(QString("#replace#"), iUi.rendererName().toLower() );
         }
+        else if( line.contains("RENDERER_H", Qt::CaseSensitive ))
+        {
+            line.replace(QString("#replace#"), iUi.rendererName().toUpper());
+        }
+
         else
         {
             line.replace(QString("#replace#"), iUi.rendererName());

@@ -17,14 +17,14 @@
 *
 */
 
-#ifndef MYRENDERINGPLUGIN_H
-#define MYRENDERINGPLUGIN_H
+#ifndef __#replace#RENDERER_H
+#define __#replace#RENDERER_H
 
 #include <xnextrenderingpluginadapter.h>
 
 // FORWARD DECLARATIONS
 
-class #replace#Renderer : public CXnExtRenderingPluginAdapter
+class C#replace#Renderer : public CXnExtRenderingPluginAdapter
     {
 public:
 
@@ -32,18 +32,18 @@ public:
     * Two-phased constructor.
     * @return Pointer to created object.
     */
-    static #replace#Renderer* NewL();
+    static C#replace#Renderer* NewL();
 
     /**
     * Two-phased constructor.
     * @return Pointer to created object.
     */
-    static #replace#Renderer* NewLC();
+    static C#replace#Renderer* NewLC();
     
     /**
     * Destructor.
     */
-    virtual ~#replace#Renderer();
+    virtual ~C#replace#Renderer();
 
 public: // from base classes
 
@@ -124,7 +124,7 @@ private: // from base classes
     /**
     * C++ default constructor.
     */
-    #replace#Renderer();
+    C#replace#Renderer();
     
     /**
     * By default Symbian 2nd phase constructor is private.
@@ -135,4 +135,4 @@ private: // Member data
 
     };
 
-#endif // MYRENDERINGPLUGIN_H
+#endif // __#replace#RENDERER_H

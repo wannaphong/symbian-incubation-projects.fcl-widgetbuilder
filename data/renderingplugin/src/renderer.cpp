@@ -18,7 +18,7 @@
 */
 
 #include <ecom/implementationproxy.h>
-#include "#replace#Renderer.h"
+#include "#replace#renderer.h"
 
 // ============================ MEMBER FUNCTIONS ===============================
 
@@ -26,9 +26,9 @@
 // Symbian static 1st phase constructor
 // -----------------------------------------------------------------------------
 //
-#replace#Renderer* #replace#Renderer::NewL()
+C#replace#Renderer* C#replace#Renderer::NewL()
     {
-    #replace#Renderer* self = #replace#Renderer::NewLC();
+    C#replace#Renderer* self = C#replace#Renderer::NewLC();
     CleanupStack::Pop( self );
     return self;
     }
@@ -36,9 +36,9 @@
 // Symbian static 1st phase constructor
 // -----------------------------------------------------------------------------
 //
-#replace#Renderer* #replace#Renderer::NewLC()
+C#replace#Renderer* C#replace#Renderer::NewLC()
     {
-    #replace#Renderer* self = new( ELeave ) #replace#Renderer();
+    C#replace#Renderer* self = new( ELeave ) C#replace#Renderer();
     CleanupStack::PushL( self );
     self->ConstructL();
     return self;
@@ -48,7 +48,7 @@
 // C++ destructor
 // -----------------------------------------------------------------------------
 //
-#replace#Renderer::~#replace#Renderer()
+C#replace#Renderer::~C#replace#Renderer()
     {
     }
 
@@ -56,7 +56,7 @@
 // Handles key events.
 // -----------------------------------------------------------------------------
 //
-TKeyResponse #replace#Renderer::OfferKeyEventL( const TKeyEvent& aKeyEvent,
+TKeyResponse C#replace#Renderer::OfferKeyEventL( const TKeyEvent& aKeyEvent,
     TEventCode aType )
     {
     }
@@ -65,7 +65,7 @@ TKeyResponse #replace#Renderer::OfferKeyEventL( const TKeyEvent& aKeyEvent,
 // Set window for this control
 // -----------------------------------------------------------------------------
 //
-void #replace#Renderer::SetContainerWindowL( const CCoeControl &aContainer )
+void C#replace#Renderer::SetContainerWindowL( const CCoeControl &aContainer )
     {
     CCoeControl::SetContainerWindowL( aContainer );
     }
@@ -74,7 +74,7 @@ void #replace#Renderer::SetContainerWindowL( const CCoeControl &aContainer )
 // (other items were commented in a header).
 // -----------------------------------------------------------------------------
 //
-void #replace#Renderer::HandlePointerEventL( const TPointerEvent& aPointerEvent )
+void C#replace#Renderer::HandlePointerEventL( const TPointerEvent& aPointerEvent )
     {
     CCoeControl::HandlePointerEventL( aPointerEvent );
     }
@@ -83,7 +83,7 @@ void #replace#Renderer::HandlePointerEventL( const TPointerEvent& aPointerEvent 
 // Returns the number of component controls
 // -----------------------------------------------------------------------------
 //
-TInt #replace#Renderer::CountComponentControls() const
+TInt C#replace#Renderer::CountComponentControls() const
     {
     return 0;
     }
@@ -92,7 +92,7 @@ TInt #replace#Renderer::CountComponentControls() const
 // Returns the specified control
 // -----------------------------------------------------------------------------
 //
-CCoeControl* #replace#Renderer::ComponentControl( TInt aIndex ) const
+CCoeControl* C#replace#Renderer::ComponentControl( TInt aIndex ) const
     {
     return NULL;
     }
@@ -101,7 +101,7 @@ CCoeControl* #replace#Renderer::ComponentControl( TInt aIndex ) const
 // Skin change notification.
 // -----------------------------------------------------------------------------
 //
-void #replace#Renderer::SkinChanged()
+void C#replace#Renderer::SkinChanged()
     {
     }
 
@@ -109,7 +109,7 @@ void #replace#Renderer::SkinChanged()
 // EnterPowerSaveModeL
 // -----------------------------------------------------------------------------
 //
-void #replace#Renderer::EnterPowerSaveModeL()
+void C#replace#Renderer::EnterPowerSaveModeL()
     {
     }
 
@@ -118,7 +118,7 @@ void #replace#Renderer::EnterPowerSaveModeL()
 //
 // -----------------------------------------------------------------------------
 //
-void #replace#Renderer::ExitPowerSaveModeL()
+void C#replace#Renderer::ExitPowerSaveModeL()
     {
     }
 
@@ -126,7 +126,7 @@ void #replace#Renderer::ExitPowerSaveModeL()
 // Called if focus changes
 // -----------------------------------------------------------------------------
 //
-void #replace#Renderer::FocusChanged( TDrawNow /*aDrawNow*/ )
+void C#replace#Renderer::FocusChanged( TDrawNow /*aDrawNow*/ )
     {
     }
 
@@ -134,7 +134,7 @@ void #replace#Renderer::FocusChanged( TDrawNow /*aDrawNow*/ )
 // Called if position or size changes
 // -----------------------------------------------------------------------------
 //
-void #replace#Renderer::SizeChanged()
+void C#replace#Renderer::SizeChanged()
     {
     }
 
@@ -142,7 +142,7 @@ void #replace#Renderer::SizeChanged()
 // Draws the carousel component
 // -----------------------------------------------------------------------------
 //
-void #replace#Renderer::Draw( const TRect& aRect ) const
+void C#replace#Renderer::Draw( const TRect& aRect ) const
     {
     CWindowGc& gc( SystemGc() );
     gc.DrawEllipse( aRect );
@@ -152,7 +152,7 @@ void #replace#Renderer::Draw( const TRect& aRect ) const
 // C++ default constructor
 // -----------------------------------------------------------------------------
 //
-#replace#Renderer::#replace#Renderer()
+C#replace#Renderer::C#replace#Renderer()
     {
     // Do nothing
     }
@@ -161,7 +161,7 @@ void #replace#Renderer::Draw( const TRect& aRect ) const
 // Symbian 2nd phase constructor can leave.
 // -----------------------------------------------------------------------------
 //
-void #replace#Renderer::ConstructL()
+void C#replace#Renderer::ConstructL()
     {
     }
 
@@ -170,9 +170,9 @@ void #replace#Renderer::ConstructL()
 const TImplementationProxy KImplementationTable[] =
     {
 #ifdef __EABI__
-    IMPLEMENTATION_PROXY_ENTRY( 0x22334455, #replace#Renderer::NewL )
+    IMPLEMENTATION_PROXY_ENTRY( 0x22334455, C#replace#Renderer::NewL )
 #else
-    { { 0x22334455 }, #replace#Renderer::NewL }
+    { { 0x22334455 }, C#replace#Renderer::NewL }
 #endif
     };
 
